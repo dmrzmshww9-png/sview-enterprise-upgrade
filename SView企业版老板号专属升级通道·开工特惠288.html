@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>SView企业版 | 老板号专属升级通道 · 开工特惠288元/人/年</title>
+    <!-- Font Awesome 6 (免费图标库) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
+            background: #F5F7FC;
+            color: #1A2C3E;
+            line-height: 1.4;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* 顶部警示条（老板号专属提醒） */
+        .alert-bar {
+            background: #FFF4E5;
+            border-left: 4px solid #F97316;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #C2410C;
+            margin-bottom: 4px;
+        }
+        .alert-bar i {
+            font-size: 18px;
+            color: #F97316;
+        }
+        .alert-bar span {
+            flex: 1;
+        }
+
+        /* hero 区域 */
+        .hero {
+            padding: 24px 20px 20px 20px;
+            background: linear-gradient(135deg, #0B2B4A 0%, #103A5E 100%);
+            color: white;
+            border-radius: 0 0 24px 24px;
+            margin-bottom: 20px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(2px);
+            border-radius: 40px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+        .hero .sub {
+            font-size: 15px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            border-left: 3px solid #F97316;
+            padding-left: 12px;
+        }
+        .price-card-hero {
+            background: rgba(255,255,255,0.12);
+            border-radius: 24px;
+            padding: 12px 16px;
+            margin-top: 8px;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            backdrop-filter: blur(4px);
+        }
+        .price-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .old-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        .new-price {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .new-price small {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .price-note {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+        .cta-btn {
+            background: #F97316;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 16px;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 16px -6px rgba(249,115,22,0.3);
+            transition: transform 0.2s, background 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .cta-btn:active {
+            transform: scale(0.96);
+            background: #E05F0C;
+        }
+
+        /* 核心卖点网格 */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            padding: 0 20px;
+            margin: 28px 0 16px 0;
+            color: #0A2540;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding: 0 20px;
+        }
+        .feature-card {
+            background: #F9FAFE;
+            border-radius: 20px;
+            padding: 18px 12px;
+            transition: all 0.2s;
+            border: 1px solid #EDF2F7;
+        }
+        .feature-card i {
+            font-size: 28px;
+            color: #F97316;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .feature-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1E2F3E;
+        }
+        .feature-card p {
+            font-size: 13px;
+            color: #4A5B6E;
+            line-height: 1.4;
+        }
+
+        /* 管理者专属价值区 */
+        .value-block {
+            background: #F0F4FA;
+            margin: 28px 20px;
+            border-radius: 28px;
+            padding: 20px;
+        }
+        .value-title {
+            font-size: 18px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            color: #0B2B4A;
+        }
+        .value-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: #2C3E50;
+        }
+        .value-item i {
+            color: #F97316;
+            font-size: 18px;
+            margin-top: 2px;
+            min-width: 22px;
+        }
+
+        /* 对比提示（老板号升级理由） */
+        .upgrade-note {
+            background: #FFF9F0;
+            border-radius: 20px;
+            margin: 8px 20px 24px 20px;
+            padding: 16px;
+            border: 1px solid #FFE4C4;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .upgrade-note i {
+            font-size: 32px;
+            color: #F97316;
+        }
+        .upgrade-note div p:first-child {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .upgrade-note div p:last-child {
+            font-size: 13px;
+            color: #785B2E;
+        }
+
+        /* CTA 横幅 */
+        .cta-banner {
+            background: linear-gradient(115deg, #0B2B4A 0%, #1A4A6F 100%);
+            margin: 24px 20px 20px 20px;
+            border-radius: 32px;
+            padding: 24px 20px;
+            text-align: center;
+            color: white;
+        }
+        .cta-banner h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .cta-banner .price-big {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 12px 0 8px;
+        }
+        .cta-banner .price-big small {
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .btn-large {
+            background: #F97316;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            margin-top: 16px;
+            width: 80%;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+            transition: 0.2s;
+        }
+        .btn-large:active {
+            transform: scale(0.97);
+            background: #E05F0C;
+        }
+
+        /* 倒计时 */
+        .countdown-wrap {
+            background: #FFFFFF;
+            border-radius: 40px;
+            padding: 12px 16px;
+            margin: 16px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border: 1px solid #E9EDF2;
+        }
+        .countdown-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #C2410C;
+        }
+        .timer {
+            font-family: monospace;
+            font-weight: 800;
+            font-size: 18px;
+            background: #1F2A3E;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 60px;
+            letter-spacing: 1px;
+        }
+
+        /* footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px 32px;
+            font-size: 12px;
+            color: #7E8A98;
+            border-top: 1px solid #EFF2F8;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #F97316;
+            text-decoration: none;
+        }
+
+        /* 其他辅助 */
+        .btn-link {
+            text-decoration: none;
+        }
+        i, .fas, .far {
+            pointer-events: none;
+        }
+        .highlight {
+            color: #F97316;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 老板号专属风险提醒 -->
+    <div class="alert-bar">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>⚠️ 您的管理员账号（老板号）即将过期？为避免团队协作中断，即刻升级企业版！</span>
+    </div>
+
+    <!-- Hero 主视觉 -->
+    <div class="hero">
+        <div class="badge">
+            <i class="fas fa-crown" style="font-size: 12px;"></i> 老板号 · 专属升级通道
+        </div>
+        <h1>管理者必备<br>SView企业版</h1>
+        <div class="sub">
+            权限管控 · 项目隔离 · 图纸评审 · 万级装配秒开<br>贯通设计→工艺→生产，数据安全可控
+        </div>
+        <div class="price-card-hero">
+            <div class="price-info">
+                <span class="old-price">原价 ¥365/人/年</span>
+                <div class="new-price">¥288 <small>/人/年</small></div>
+                <div class="price-note"><i class="fas fa-users"></i> 3人起购，按需灵活扩展</div>
+            </div>
+            <a href="https://sview3d.com/" target="_blank" class="cta-btn btn-link">
+                立即续费升级 <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- 开工特惠倒计时 -->
+    <div class="countdown-wrap">
+        <div class="countdown-text">
+            <i class="fas fa-stopwatch"></i> 开工季限时特惠结束
+        </div>
+        <div class="timer" id="countdownTimer">03天 12:00:00</div>
+    </div>
+
+    <!-- 核心功能亮点 (6大企业级能力) -->
+    <div class="section-title">
+        <i class="fas fa-star-of-life" style="color: #F97316; font-size: 20px;"></i> 企业版 · 解锁专业能力
+    </div>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <i class="fas fa-cubes"></i>
+            <h3>万级装配秒开</h3>
+            <p>支持50+三维格式，超大模型流畅加载，告别等待</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>干涉检查+模型比对</h3>
+            <p>自动识别差异与碰撞，精准提升设计质量</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-drafting-compass"></i>
+            <h3>3D一键转2D工程图</h3>
+            <p>在线编辑DWG，实时同步，加速出图投产</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>权限管控+项目隔离</h3>
+            <p>为员工、供应商设置不同权限，数据资产安全无忧</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-film"></i>
+            <h3>动画拆解+三维指导书</h3>
+            <p>精准传递工艺意图，赋能生产培训与作业规范</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-handshake"></i>
+            <h3>轻量化共享+图纸评审</h3>
+            <p>供应商无需专业软件，在线批注留痕，内外协同无缝</p>
+        </div>
+    </div>
+
+    <!-- 老板号升级专属价值：管理者痛点 -->
+    <div class="value-block">
+        <div class="value-title">
+            <i class="fas fa-chalkboard-user"></i> 为什么老板/管理者都选择企业版？
+        </div>
+        <div class="value-list">
+            <div class="value-item">
+                <i class="fas fa-lock"></i>
+                <span><strong>数据资产安全可控</strong> – 精细化权限分级，项目独立隔离，杜绝核心图纸外泄风险。</span>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-chart-simple"></i>
+                <span><strong>团队协同效率倍增</strong> – 图纸评审、模型批注一站式闭环，减少沟通返工。</span>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-diagram-project"></i>
+                <span><strong>贯通设计→工艺→生产</strong> – 3D转2D、动画指导书，让制造现场准确执行。</span>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span><strong>供应链无缝协作</strong> – 轻量化共享，外部伙伴安全参与，交付周期缩短30%+。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 老板号基础版 vs 企业版 升级理由 -->
+    <div class="upgrade-note">
+        <i class="fas fa-gem"></i>
+        <div>
+            <p>⚡ 基础版老板号仅限人员管理，升级企业版立即解锁专业工具链</p>
+            <p>✅ 秒开万级装配 · 干涉比对 · 3D转2D · 动画拆解 · 权限隔离 · 内外协同</p>
+        </div>
+    </div>
+
+    <!-- 专属 CTA 第二次 -->
+    <div class="cta-banner">
+        <h3>开工季限时特惠</h3>
+        <div class="price-big">¥288 <small>/人/年</small></div>
+        <div style="font-size: 14px; opacity: 0.9;">原价365元/人/年，3人起购</div>
+        <div style="font-size: 13px; margin-top: 6px;"><i class="fas fa-check-circle"></i> 恢复团队权限与数据，即刻生效</div>
+        <a href="https://sview3d.com/" target="_blank" class="btn-large">
+            立即续费升级 <i class="fas fa-chevron-circle-right"></i>
+        </a>
+        <div style="font-size: 12px; margin-top: 14px;">*企业版支持按需扩展席位，适配不同规模团队</div>
+    </div>
+
+    <!-- 更多信任增强: 管理层专属功能直达 -->
+    <div style="margin: 0 20px 10px 20px; background: #FFFFFF; border-radius: 24px; padding: 16px; border: 1px solid #ECF3FA;">
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: space-between;">
+            <div>
+                <i class="fas fa-headset" style="color:#F97316; font-size: 24px;"></i>
+                <span style="font-weight: 700; margin-left: 6px;">企业级专属服务</span>
+                <p style="font-size: 12px; color: #5F6C7A; margin-top: 5px;">专属客户经理 · 数据迁移支持 · 团队部署培训</p>
+            </div>
+            <div>
+                <i class="fas fa-file-invoice-dollar" style="color:#F97316; font-size: 24px;"></i>
+                <span style="font-weight: 700; margin-left: 6px;">正规发票/合同</span>
+                <p style="font-size: 12px; color: #5F6C7A; margin-top: 5px;">对公采购无忧，满足企业财务流程</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 老板号用户专属常见痛点 Q&A 简短 -->
+    <div style="margin: 20px 20px 0 20px; background: #F9FAFE; border-radius: 24px; padding: 20px;">
+        <div style="font-weight: 800; margin-bottom: 14px; display: flex; gap: 8px;"><i class="fas fa-question-circle" style="color:#F97316;"></i> 管理者高频问题</div>
+        <div style="margin-bottom: 12px;">
+            <div style="font-weight: 600; font-size: 14px;">❓ 我的老板号过期了，团队数据还能恢复吗？</div>
+            <div style="font-size: 13px; color: #4A5B6E;">可以！升级企业版后立即恢复所有团队数据、权限及历史项目，无缝续用。</div>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <div style="font-weight: 600; font-size: 14px;">❓ 如何为供应商/外部伙伴开通账号？</div>
+            <div style="font-size: 13px; color: #4A5B6E;">企业版支持独立邀请外部用户，设置“仅查看/批注”权限，安全合规。</div>
+        </div>
+        <div>
+            <div style="font-weight: 600; font-size: 14px;">❓ 3人起购，后期可以增购吗？</div>
+            <div style="font-size: 13px; color: #4A5B6E;">支持随时按需增购，统一管理，按比例折算，灵活应对团队扩张。</div>
+        </div>
+    </div>
+
+    <!-- 最后行动号召 -->
+    <div style="margin: 28px 20px 12px 20px; text-align: center;">
+        <a href="https://sview3d.com/" target="_blank" style="background: #0B2B4A; display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 60px; color: white; font-weight: 700; text-decoration: none; width: 100%; justify-content: center; box-sizing: border-box;">
+            <i class="fas fa-rocket"></i> 立即升级企业版，赋能团队协同
+        </a>
+        <p style="font-size: 11px; margin-top: 12px; color: #8C9AA8;">*开工特惠价288元/人/年，优惠截止至2026年3月31日</p>
+    </div>
+
+    <div class="footer">
+        <i class="fas fa-chart-network"></i> SView 企业级3D协同平台 · 数据安全 · 高效设计生产<br>
+        © 2026 SView 企业版 | <a href="https://sview3d.com/" target="_blank">访问官网</a> | 本活动最终解释权归SView所有
+    </div>
+</div>
+
+<script>
+    // 倒计时：截止2026年3月31日 23:59:59
+    function getEndTime() {
+        // 设定活动截止日期: 2026年3月31日 23:59:59
+        return new Date(2026, 2, 31, 23, 59, 59); // 月份从0开始，2表示三月
+    }
+
+    function updateCountdown() {
+        const endDate = getEndTime();
+        const now = new Date();
+        const diff = endDate - now;
+
+        if (diff <= 0) {
+            document.getElementById('countdownTimer').innerHTML = '活动已结束';
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const formatted = `${days}天 ${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+        document.getElementById('countdownTimer').innerHTML = formatted;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // 可选: 增强按钮点击行为追踪(保持链接跳转即可)
+    // 所有外部链接 https://sview3d.com/ 正常跳转
+</script>
+</body>
+</html>
